@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "release": {
+        "schemaVersion": 1,
+        "appId": "io.vadirn.trinket",
+        "build": "2",
+        "version": "0.1.0",
+        "channel": "preview",
+        "minimumSystemVersion": "27.0",
+        "archive": {
+          "file": "Trinket-0.1.0-preview-2.zip",
+          "bytes": 119972497,
+          "sha256": "92789d115d1b1a02b6ef291be13b5499b191c71888b973b7c06f236741f15b10",
+          "edSignature": "ms3OUUf91ZOEJ86Kw7V14O/25m/DorrNDMtxSrMjW21zwsm1A/qkNloJfnh/MPTClw6bI6ttlTsT5zPAQnK2Aw=="
+        },
+        "notes": {
+          "markdown": "### Added\n\n- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.\n- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.\n- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.\n\n### Changed\n\n- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.\n\n### Fixed\n\n- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.\n",
+          "breaking": false
+        }
+      },
+      "downloadURL": "https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F2/Trinket-0.1.0-preview-2.zip",
+      "publishedAt": "2026-10-19T11:56:14.000Z"
+    }
+  ]
+}
