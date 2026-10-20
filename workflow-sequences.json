@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "publisher": "io.vadirn",
+  "package": "git",
+  "allocations": [
+    {
+      "request": "fb4fff95-ad3e-49ba-b7e0-63c4a18930a6",
+      "sequence": 1
+    }
+  ]
+}
