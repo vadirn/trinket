@@ -3,6 +3,31 @@
   <channel>
     <title>Trinket Updates</title>
     <item>
+      <title>Trinket 0.1.0 Preview (5)</title>
+      <pubDate>Tue, 20 Oct 2026 07:59:53 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>27.0</sparkle:minimumSystemVersion>
+      <sparkle:channel>preview</sparkle:channel>
+      <description sparkle:format="markdown"><![CDATA[### Added
+
+- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.
+- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.
+- Show configured package and workflow labels, with input names below run headings.
+- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.
+
+### Changed
+
+- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.
+
+### Fixed
+
+- Switching workflows and collapsing sidebar folders clears the previous selection highlight without leaving an overlapping row.
+- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.
+]]></description>
+      <enclosure url="https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F5/Trinket-0.1.0-preview-5.zip" length="119974425" type="application/octet-stream" sparkle:edSignature="Yw3DSUjFLJk6vpnke5Zx6inAzTNwkgprwzAOediq76XHUbN1zXMACNTJkOWwraa4SQMmKXZqpfHuaBzgSwg/DA==" />
+    </item>
+    <item>
       <title>Trinket 0.1.0 Preview (4)</title>
       <pubDate>Tue, 20 Oct 2026 04:03:07 +0000</pubDate>
       <sparkle:version>4</sparkle:version>

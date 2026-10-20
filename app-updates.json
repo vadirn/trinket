@@ -5,6 +5,28 @@
       "release": {
         "schemaVersion": 1,
         "appId": "io.vadirn.trinket",
+        "build": "5",
+        "version": "0.1.0",
+        "channel": "preview",
+        "minimumSystemVersion": "27.0",
+        "archive": {
+          "file": "Trinket-0.1.0-preview-5.zip",
+          "bytes": 119974425,
+          "sha256": "668aa6eb1cfef96678e705aa33e0a02ba585cda0abf2141f695089ad2946c737",
+          "edSignature": "Yw3DSUjFLJk6vpnke5Zx6inAzTNwkgprwzAOediq76XHUbN1zXMACNTJkOWwraa4SQMmKXZqpfHuaBzgSwg/DA=="
+        },
+        "notes": {
+          "markdown": "### Added\n\n- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.\n- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.\n- Show configured package and workflow labels, with input names below run headings.\n- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.\n\n### Changed\n\n- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.\n\n### Fixed\n\n- Switching workflows and collapsing sidebar folders clears the previous selection highlight without leaving an overlapping row.\n- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.\n",
+          "breaking": false
+        }
+      },
+      "downloadURL": "https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F5/Trinket-0.1.0-preview-5.zip",
+      "publishedAt": "2026-10-20T07:59:53.000Z"
+    },
+    {
+      "release": {
+        "schemaVersion": 1,
+        "appId": "io.vadirn.trinket",
         "build": "4",
         "version": "0.1.0",
         "channel": "preview",
