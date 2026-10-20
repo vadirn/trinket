@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "publisher": "io.vadirn",
+  "package": "turn",
+  "allocations": [
+    {
+      "request": "7324e645-57b5-4251-82fd-94f43a905e71",
+      "sequence": 1
+    }
+  ]
+}
