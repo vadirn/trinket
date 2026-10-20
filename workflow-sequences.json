@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "publisher": "io.vadirn",
+  "package": "writer",
+  "allocations": [
+    {
+      "request": "39985999-b62a-4c1a-baf2-cd70a49305fd",
+      "sequence": 1
+    }
+  ]
+}
