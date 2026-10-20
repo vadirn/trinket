@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "publisher": "io.vadirn",
+  "package": "research",
+  "allocations": [
+    {
+      "request": "391aff3a-b904-4580-b320-b1a6b5c79064",
+      "sequence": 1
+    }
+  ]
+}
