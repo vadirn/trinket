@@ -20,6 +20,10 @@
     {
       "request": "63a6baee-2023-4f4c-bab9-810cc6ad6d9d",
       "build": "6"
+    },
+    {
+      "request": "f2fd80b9-a122-4812-8db3-901db5b78d22",
+      "build": "7"
     }
   ]
 }
