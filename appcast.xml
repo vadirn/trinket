@@ -3,6 +3,34 @@
   <channel>
     <title>Trinket Updates</title>
     <item>
+      <title>Trinket 0.1.0 Preview (8)</title>
+      <pubDate>Tue, 27 Oct 2026 06:29:27 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>27.0</sparkle:minimumSystemVersion>
+      <sparkle:channel>preview</sparkle:channel>
+      <description sparkle:format="markdown"><![CDATA[### Added
+
+- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.
+- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.
+- Show configured package and workflow labels, with input names below run headings.
+- Runs started with a JSON object input show its title or text field as their title, so Git message checks are named in the run list.
+- Packages can declare their update source and default channel; trusted signed archives configure updates while preserving pins, channels, opt-outs and local packages.
+- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.
+
+### Changed
+
+- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.
+- The engine and workflow boxes now run on Bun 1.4.4.
+
+### Fixed
+
+- Switching workflows and collapsing sidebar folders clears the previous selection highlight without leaving an overlapping row.
+- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.
+]]></description>
+      <enclosure url="https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F8/Trinket-0.1.0-preview-8.zip" length="134932346" type="application/octet-stream" sparkle:edSignature="SU8P6mZTWjgYFwRhDAuzO3kQNFATEAZTkwp17C8JheXjZ+9laCo7ip+wYuix21hHTJ7Pz4Nfa4qrg7D7pEByDg==" />
+    </item>
+    <item>
       <title>Trinket 0.1.0 Preview (7)</title>
       <pubDate>Sat, 24 Oct 2026 06:27:28 +0000</pubDate>
       <sparkle:version>7</sparkle:version>

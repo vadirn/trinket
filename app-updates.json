@@ -5,6 +5,28 @@
       "release": {
         "schemaVersion": 1,
         "appId": "io.vadirn.trinket",
+        "build": "8",
+        "version": "0.1.0",
+        "channel": "preview",
+        "minimumSystemVersion": "27.0",
+        "archive": {
+          "file": "Trinket-0.1.0-preview-8.zip",
+          "bytes": 134932346,
+          "sha256": "f0c34c30f95279afba1620d0da5c5f586dff9eb20e6fd9bb360b26aa6f5919c9",
+          "edSignature": "SU8P6mZTWjgYFwRhDAuzO3kQNFATEAZTkwp17C8JheXjZ+9laCo7ip+wYuix21hHTJ7Pz4Nfa4qrg7D7pEByDg=="
+        },
+        "notes": {
+          "markdown": "### Added\n\n- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.\n- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.\n- Show configured package and workflow labels, with input names below run headings.\n- Runs started with a JSON object input show its title or text field as their title, so Git message checks are named in the run list.\n- Packages can declare their update source and default channel; trusted signed archives configure updates while preserving pins, channels, opt-outs and local packages.\n- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.\n\n### Changed\n\n- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.\n- The engine and workflow boxes now run on Bun 1.4.4.\n\n### Fixed\n\n- Switching workflows and collapsing sidebar folders clears the previous selection highlight without leaving an overlapping row.\n- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.\n",
+          "breaking": false
+        }
+      },
+      "downloadURL": "https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F8/Trinket-0.1.0-preview-8.zip",
+      "publishedAt": "2026-10-27T06:29:27.000Z"
+    },
+    {
+      "release": {
+        "schemaVersion": 1,
+        "appId": "io.vadirn.trinket",
         "build": "7",
         "version": "0.1.0",
         "channel": "preview",
