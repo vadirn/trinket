@@ -5,6 +5,29 @@
       "release": {
         "schemaVersion": 1,
         "appId": "io.vadirn.trinket",
+        "build": "10",
+        "version": "0.1.0",
+        "channel": "preview",
+        "minimumSystemVersion": "27.0",
+        "archive": {
+          "file": "Trinket-0.1.0-preview-10.tar.xz",
+          "bytes": 63285364,
+          "sha256": "be92e4180af2319731b14177a43799781ee16da11bd05ebb8386dfbda47690d8",
+          "edSignature": "WK7CCPunqO74jYcWyUU5aFeFEqpBXHXbJKMU/SDInsZ5GFkdhQl94rQFqG9yVrZN9k+2cUTXwX6xB4T9t8ZlBA=="
+        },
+        "notes": {
+          "markdown": "### Added\n\n- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.\n- A workflow can read a folder you allow, read-only, at /workspace inside its box. Allow folders on the workflow page. A run that names another folder asks for your approval. Name the folder with trinket run --folder, or with folder_path on the workflow MCP tool.\n- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.\n- Show configured package and workflow labels, with input names below run headings.\n- Runs started with a JSON object input show its title or text field as their title, so Git message checks are named in the run list.\n- When the CLI or an MCP client changes a package in a way that touches a configured secret, sign-in or write-back folder, Trinket asks for your approval on the Packages page. Agents read the answer with the get_access_request tool.\n- Packages can declare their update source and default channel; trusted signed archives configure updates while preserving pins, channels, opt-outs and local packages.\n- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.\n\n### Changed\n\n- Updates download about half as much, and Trinket takes about 260 MB less disk space.\n- In the Settings window, Models, MCP Servers and Workflows use macOS system type, colors and grouped sections, so they match General.\n- CLI and MCP runs no longer write a revision back to their input file, and the MCP workflow tools drop input_path.\n- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.\n- The engine and workflow boxes now run on Bun 1.4.4.\n\n### Fixed\n\n- Switching workflows and collapsing sidebar folders clears the previous selection highlight without leaving an overlapping row.\n- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.\n- Checking for updates when none is available no longer shows a red error in Settings or cancels a quit that waits for active workflows.\n\n### Security\n\n- A saved provider key or sign-in is sent only to the host it was saved for. Provider settings can no longer add request headers or name an environment key.\n- Only Trinket.app can change settings, secrets, sign-ins, write-back folders and updates. The CLI, MCP clients and any process that reads engine.json can still run workflows, read results and install packages.\n\n### Migration\n\nConfigure a write-back destination for the revision's kind, or start the run from Trinket.app to revise the file in place.\n",
+          "breaking": true,
+          "migration": "Configure a write-back destination for the revision's kind, or start the run from Trinket.app to revise the file in place."
+        }
+      },
+      "downloadURL": "https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F10/Trinket-0.1.0-preview-10.tar.xz",
+      "publishedAt": "2026-10-30T15:58:31.000Z"
+    },
+    {
+      "release": {
+        "schemaVersion": 1,
+        "appId": "io.vadirn.trinket",
         "build": "9",
         "version": "0.1.0",
         "channel": "preview",
