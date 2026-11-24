@@ -3,6 +3,90 @@
   <channel>
     <title>Trinket Updates</title>
     <item>
+      <title>Trinket 0.1.0 Preview (11)</title>
+      <pubDate>Tue, 24 Nov 2026 14:54:16 +0000</pubDate>
+      <sparkle:version>11</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>27.0</sparkle:minimumSystemVersion>
+      <sparkle:channel>preview</sparkle:channel>
+      <description sparkle:format="markdown"><![CDATA[### Added
+
+- Workflow packages can receive signed live updates with Pinned or Automatic policies; updates needing setup keep the current workflow usable until setup is complete. Workflows settings exposes publisher review, policy controls, release notes and applied update history.
+- Probe a Claude Code or Codex conversation and compile its brief through the prompt workflow.
+- A workflow can read a folder you allow, read-only, at /workspace inside its box. Allow folders on the workflow page. A run that names another folder asks for your approval. Name the folder with trinket run --folder, or with folder_path on the workflow MCP tool.
+- App startup preserves pre-migration database checkpoints across failed upgrades and retries, and offers Retry Startup while retaining credential-key protections.
+- Settings can add a provider at any endpoint that speaks the OpenAI or Anthropic protocol, local servers included. Add Provider fetches its model list, and you tick the models to use.
+- Show configured package and workflow labels, with input names below run headings.
+- Workflows can run on gpt-6-sol through a ChatGPT sign-in, OpenAI or OpenRouter, the same routes that serve gpt-5.6-luna.
+- Each agent state can run on a provider and model you pick in its state inspector. A pick that cannot run stops the state and says why; it never falls back to another provider.
+- Add Provider now offers presets for popular providers, such as Groq, xAI and Together AI, with their host and models filled in. Anthropic, Google and the other built-in providers list models to tick, and Choose Models… changes them later.
+- Runs started with a JSON object input show its title or text field as their title, so Git message checks are named in the run list.
+- A state can be picked to a provider alone, so it runs its package's model there and follows each package update. The workflow summary's Models section adds one action that picks a provider for every agent state whose model it serves, and names the states it skips.
+- When the CLI or an MCP client changes a package in a way that touches a configured secret, sign-in or write-back folder, Trinket asks for your approval on the Packages page. Agents read the answer with the get_access_request tool.
+- Packages can declare their update source and default channel; trusted signed archives configure updates while preserving pins, channels, opt-outs and local packages.
+- MCP clients can read each run output's body with read_run_output, page by page, without marking the run seen.
+- The menu bar icon now lists each access request waiting for your approval, with its workflow and age. The icon shows a dot while any request waits. Choosing one opens its workflow page on that request, with Decline and Approve beside the full grant. The sidebar marks each workflow that has a waiting request. Settings › Workflows answers package requests in place and links every other request to its workflow page.
+- Workflow authors can create change fragments and prepare reviewed release notes and version plans with the Bun release utility.
+
+### Changed
+
+- A run's graph pans when you drag anywhere on it, also when it fits its frame. The graph can leave the frame until the frame's center reaches its edge, so each corner can come to the center. A click on a state still selects it, and the workflow graph on Overview pans as before.
+- The main window's sidebar fills with an opaque grey, so the desktop behind the window no longer shows through it.
+- A run's graph shows each state's name and its time, with a count such as ×2 only for a state that ran more than once. Its boxes drop the agent or static tag, tool call counts and onMax notes, which the workflow graph, the visit card and the taken edges already show.
+- Each value in a workflow's Settings tab changes in place. Keys, values and output folders save from their own row, with no Save button and no run.
+- The Log tab shows Problems only for a run with problems, and one Expand All button that turns into Collapse All. A visit's title opens that visit on the Path. Visits drop the state's code name, and the Calls row shows counts only, while each model call keeps its tokens. Under All, a visit says what it returned but not where the run went next, since that visit sits right below.
+- Facts on pages and in the sidebar footer are joined by kind, with a comma after a count, a colon after a number and words such as via, instead of a middle dot.
+- Updates download about half as much, and Trinket takes about 260 MB less disk space.
+- A waiting folder request shows its path and expiry in the Settings tab's Needs attention, and Approve there allows exactly that path. Under Access, Add Folder… saves a path on Return and each folder's menu holds Remove Folder.
+- In the Settings window, Models, MCP Servers and Workflows use macOS system type, colors and grouped sections, so they match General.
+- An agent state with no pick runs on the first provider that serves its model and holds your key or sign-in.
+- A workflow's summary panel opens on its result kinds. It no longer shows a Workflow summary heading, a hint to select a state, or a Defined by footer, since the panel's place, the clickable states and the header's version already say them.
+- A run's header shows its status, number, start time and duration. It names the package version only when the run used a version other than the installed one. The run's total tokens moved to the Log tab, beside Expand All.
+- Each workflow has a Settings tab beside Overview and Runs. Needs attention lists what stops a state, each with its fix, and the tab's label counts them. The Overview's Connections, Models, Readable folders and Output folders disclosures become one Settings row.
+- Provider presets refresh from models.dev at launch, so the names and sizes of the models a provider lists stay current. A refresh never adds or removes a model.
+- CLI and MCP runs no longer write a revision back to their input file, and the MCP workflow tools drop input_path.
+- An agent state's provider and model come from one menu that groups models by provider, so one click saves both. Set Provider for Every State replaces the Provider row. A menu near the page's end opens above its trigger instead of shrinking.
+- Workflow submissions receive a retryable update-pending response while an app restart waits for accepted workflows and package installs to finish.
+- The engine and workflow boxes now run on Bun 1.4.4.
+
+### Fixed
+
+- A model added to a provider route in settings is offered and runs at once. Before, Trinket refused it as an unknown model, even after a restart.
+- Switching workflows and collapsing sidebar folders clears the previous selection highlight without leaving an overlapping row.
+- Active workflows keep their settings and credentials during updates or removal; unused data is cleaned up when they finish.
+- A workflow's Settings tab shows one column, capped at the page width, and every list sits in a card, so model picks and output folders line up with their rows.
+- The engine waits for a briefly locked database at startup instead of failing, for example while the credentials command saves a key.
+- An MCP sign-in that has expired and cannot refresh now shows as needing a sign-in, instead of reading ready until a run fails.
+- Checking for updates when none is available no longer shows a red error in Settings or cancels a quit that waits for active workflows.
+
+### Removed
+
+- Settings no longer has a Model routing section, and Add Provider no longer offers to route a model. A route picked there is now ignored, so pick the provider in each state's inspector instead.
+
+### Security
+
+- A saved provider key or sign-in is sent only to the host it was saved for. Provider settings can no longer add request headers or name an environment key.
+- The engine now refuses a call from another origin's page, and a request body that is not JSON. So a page cannot ride the Bearer a proxy adds.
+- A step can no longer send a secret to a host its paste prompt did not name. A state that reads secrets bound to different hosts now fails before it reads any.
+- A tunnel to a secret's host now opens only on TLS that names that host. That holds even at a CDN address many sites share. The engine's proxy cannot read the HTTP Host header inside TLS. So a CDN that routes by that header can still serve another site.
+- Only Trinket.app can change settings, secrets, sign-ins, write-back folders and updates. The CLI, MCP clients and any process that reads engine.json can still run workflows, read results and install packages.
+- A step can no longer reach the Mac itself, or a device on its network, by a public address. The egress proxy now refuses both, over IPv6 and IPv4.
+
+### Migration
+
+Send Content-Type: application/json with every request body. Call the engine from its own page, or from a client that sends no Origin.
+
+Give every secret a state reads the same hosts, or split the state so each reads secrets that share hosts.
+
+A step that reads a secret must reach its hosts over TLS. The proxy cuts plain HTTP, SSH, Postgres and other non-TLS protocols. It also cuts an encrypted ClientHello, which Chromium and Firefox send by default.
+
+A step that reached a service on your own network by its public address now gets 403. Reach that service through a host outside your network instead.
+
+Configure a write-back destination for the revision's kind, or start the run from Trinket.app to revise the file in place.
+]]></description>
+      <enclosure url="https://github.com/vadirn/trinket/releases/download/app%2Fpreview%2F11/Trinket-0.1.0-preview-11.tar.xz" length="63302520" type="application/octet-stream" sparkle:edSignature="nFdynHXyZ6gYyyvnecv3hrtqzWXWEJflIl0MHTyTYHx8eq68mqpnb17QJnq1s/mBBNn68VotLB2PqC5ex6++CA==" />
+    </item>
+    <item>
       <title>Trinket 0.1.0 Preview (10)</title>
       <pubDate>Fri, 30 Oct 2026 15:58:31 +0000</pubDate>
       <sparkle:version>10</sparkle:version>
